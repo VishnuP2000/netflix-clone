@@ -18,7 +18,7 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/Login' element={<Login/>} />
       <Route path='/Signup' element={<Signup/>} />
-      <Route path='/MovieTrailer' element={<MovieTrailer/>} />
+      <Route path='/MovieTrailer/:params' element={<MovieTrailer/>} />
       <Route path='/Profile' element={<ProtectedRoute> <Profile/> </ProtectedRoute>} />
     </Routes>
     </AuthContextProvider>

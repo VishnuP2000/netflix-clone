@@ -14,7 +14,8 @@ function MovieItem({ movie }) {
 
   const { title, backdrop_path, poster_path } = movie;
 
-  const markFavShow = async () => {
+  const markFavShow = async (e) => {
+    e.stopPropagation()
     const userEmail = user?.email;  
 
     
@@ -33,7 +34,7 @@ function MovieItem({ movie }) {
     }
   };
 
-  const params = new URLSearchParams( ).toString()
+  const params = new URLSearchParams(movie).toString()
 
   return (
     <div onClick={() => navigate(`/MovieTrailer/${params}`) } className='relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block rounded-lg overflow-hidden cursor-pointer m-2'>
